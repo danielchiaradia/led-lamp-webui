@@ -38,6 +38,7 @@ jobs:
         cp -f gzipped/favicon.ico.gz data
         cp build/index.html data/index-cdn.html
         sed -i 's#href="#href="https://coderus.openrepos.net/firelamp#g' data/index-cdn.html
+        sed -i 's#src="#src="https://coderus.openrepos.net/firelamp#g' data/index-cdn.html
         gzip data/index-cdn.html
       
     - name: Upload build result
@@ -52,9 +53,6 @@ jobs:
         set -x
         assets=()
         for asset in data/*.gz; do
-          assets+=("-a" "$asset")
-        done
-        for asset in artifacts/*.zip; do
           assets+=("-a" "$asset")
         done
         RELEASE_TAG="$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
