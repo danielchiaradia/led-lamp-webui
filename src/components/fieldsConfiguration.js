@@ -40,6 +40,11 @@ export const fieldsConf = {
 
 export const calcInputProps = (key, value) => {
   const inputProps = fieldsConf.effects[key]
+  if (!inputProps && typeof value === `boolean`) {
+    return {
+      type: 'checkbox',
+    }
+  }
   if (key.toLowerCase().includes('color'))
     return {
       type: 'color',
@@ -49,11 +54,6 @@ export const calcInputProps = (key, value) => {
       type: 'range',
       min: 0,
       max: 255,
-    }
-  }
-  if (!inputProps && typeof value === `boolean`) {
-    return {
-      type: 'checkbox',
     }
   }
   return inputProps
