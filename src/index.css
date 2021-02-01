@@ -12,7 +12,7 @@ body {
 
 .grid-container-layout {
   display: grid;
-  grid-template-columns: 1fr 0.5fr;
+  grid-template-columns: 1fr 0.7fr;
   grid-template-rows: 1fr;
   gap: 1px 16px;
   grid-template-areas: '. .';
@@ -237,6 +237,17 @@ input[type='range']::-moz-range-thumb {
 
   transition: width 500ms ease-in-out;
 }
+
+.alarm-container-layout {
+  display: grid;
+  grid-template-columns: 0.2fr 0.2fr 0.1fr;
+  grid-template-rows: 1fr;
+  gap: 5px 5px;
+  grid-template-areas: '. .';
+  padding-top: 1px;
+  align-items: center;
+}
+
 
 @media (max-width: 767px) {
   .grid-container-layout {

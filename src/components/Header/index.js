@@ -3,6 +3,7 @@ import { PowerButton } from '../PowerButton'
 import { WSReconnectButton } from '../WSReconnectButton'
 import { UpdateModal } from '../UpdateModal'
 import { EmojiBtn } from '../EmojiBtn'
+import { AlarmModal } from '../AlarmModal'
 
 export const Header = ({ powerOn, webSocketConnection }) => (
   <div className={`header ${webSocketConnection ? 'active' : 'disconnected'}`}>
@@ -10,6 +11,7 @@ export const Header = ({ powerOn, webSocketConnection }) => (
       <div className="grid-container-layout">
         <h1 className="heading">LED - {powerOn ? 'working' : 'not working'}</h1>
         <div>
+          <AlarmModal />
           <WSReconnectButton />
           <PowerButton powerOn={powerOn} />
           <UpdateModal />

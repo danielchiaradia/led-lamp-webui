@@ -11,7 +11,8 @@
     "react-scripts": "^3.4.1",
     "reconnecting-websocket": "^4.4.0",
     "socket.io": "^2.3.0",
-    "websocket": "^1.0.31"
+    "websocket": "^1.0.31",
+    "react-simple-timefield": "^3.2.3"
   },
   "devDependencies": {
     "gzipper": "^3.5.0",
