@@ -1,6 +1,6 @@
 import ReconnectingWebSocket from 'reconnecting-websocket';
 
-export const websocket = new ReconnectingWebSocket("ws://localhost:8000/ws");
+export const websocket = new ReconnectingWebSocket("ws://" + window.location.host + "/ws");
 
 export const sendWSEvent = (eventName, data) => {
     websocket.send(
