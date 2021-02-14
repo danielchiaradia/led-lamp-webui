@@ -46,8 +46,22 @@ const Control = ({ effectKey, value, handleChangeForm }) => {
 
 export const EffectControl = ({ effect = {}, setEffects, activeEffect }) => {
   const [formState, setFormState] = useState({ ...effect })
+  const [sendUpdate, setSendUpdate] = useState({});
 
   useEffect(() => setFormState(effect), [effect])
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      if (Object.keys(sendUpdate).length !== 0) {
+        sendWSEvent(EVENTS.effects, sendUpdate);
+      } 
+    }, 500)
+
+    return () => {
+      clearTimeout(handler)
+    }
+  }, 
+  [sendUpdate]);
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -81,7 +95,7 @@ export const EffectControl = ({ effect = {}, setEffects, activeEffect }) => {
         value = e.target.value
     }
     setFormState({ ...formState, [e.target.name]: value })
-    sendWSEvent(EVENTS.effects, formState)
+    setSendUpdate({ ...formState, [e.target.name]: value });
   }
 
   return (
