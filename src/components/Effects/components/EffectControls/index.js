@@ -51,7 +51,7 @@ export const EffectControl = ({ effect = {}, setEffects, activeEffect }) => {
 
   useEffect(() => {
     const handler = setTimeout(() => {
-      sendWSEvent(EVENTS.effects, formState)
+      
       setEffects((prevEffects) => {
         return prevEffects.map((item, index) => {
           if (index === activeEffect) return formState
@@ -81,6 +81,7 @@ export const EffectControl = ({ effect = {}, setEffects, activeEffect }) => {
         value = e.target.value
     }
     setFormState({ ...formState, [e.target.name]: value })
+    sendWSEvent(EVENTS.effects, formState)
   }
 
   return (

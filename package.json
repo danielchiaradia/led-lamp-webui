@@ -27,6 +27,7 @@
     "eject": "react-scripts eject",
     "server": "node server/server.js"
   },
+  "proxy": "http://192.168.178.180:80",
   "eslintConfig": {
     "extends": "react-app"
   },

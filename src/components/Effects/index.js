@@ -11,7 +11,7 @@ export const Effects = ({ activeWSEffect }) => {
   useEffect(() => {
     let fetchEffects = async () => {
       try {
-        let response = await fetch('/effects.json')
+        let response = await fetch('/effects')
         if (response.ok) {
           let text = await response.text()
           try {
