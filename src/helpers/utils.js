@@ -2,6 +2,7 @@ export const title = (string) => {
   const titles = {
     n: 'Name',
     b: 'Brightness',
+    e: 'Enabled',
     s: 'Speed',
     l: 'Scale',
     i: 'Id',

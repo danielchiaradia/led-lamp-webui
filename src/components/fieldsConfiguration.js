@@ -9,6 +9,9 @@ export const fieldsConf = {
     n: {
       type: 'text',
     },
+    e: {
+      type: 'checkbox'
+    },
     s: {
       type: 'range',
       min: 0,
